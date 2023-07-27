@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('cedula');
             $table->string('direccion');
             $table->string('fechaNacimiento');
+            $table->boolean('activo')->default(true); // Nuevo campo para el borrado lógico
+
             $table->timestamps();
         });
     }

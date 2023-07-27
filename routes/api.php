@@ -23,6 +23,11 @@ Route::group(['middleware'=>["auth:sanctum"]], function () {
     Route::put('auth/update/{id}', [AuthController::class, 'update']);
     Route::get('auth/show/{id}', [AuthController::class, 'show']);
     Route::get('/auth/persona', [personaController::class, 'mostrar']);
+    Route::put('auth/change/{id}', [personaController::class, 'cambiarPassword']);
+    Route::get('auth/mostrar', [personaController::class, 'mostrarConRol']);
+    Route::delete('auth/delete-user-persona/{id}', [personaController::class, 'eliminarUsuarioYPersona']);
+
+
 
 });
 Route::post('/auth/register', [AuthController::class, 'createUser']);
